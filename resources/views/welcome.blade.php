@@ -3,6 +3,6 @@
    
     </head>
     <body>
-        <h2> Hello world</h2>
+        <h2> Hello <?= $name ?></h2>
     </body>
 </html>

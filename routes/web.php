@@ -12,10 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+
+    return view('welcome', [
+
+    	'name' => 'john'
+
+    	]);
+
+    //return view('welcome')->with('name', 'johni');	
 });
 
 Route::get('about', function() {
 	return view('about');
 
 });
+
+

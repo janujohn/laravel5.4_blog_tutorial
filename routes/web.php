@@ -13,9 +13,14 @@
 
 Route::get('/', function () {
 
-   $name = 'janu';
-   $age  = '20';
-   return view('welcome', compact('name', 'age'));	
+ 	$lines = [
+
+ 		'line1',
+ 		'line2',
+ 		'line3'
+ 	];
+
+   return view('welcome', compact('lines'));	
 
 });
 

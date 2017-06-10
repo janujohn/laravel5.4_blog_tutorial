@@ -3,6 +3,13 @@
    
     </head>
     <body>
-        <h2> <?= $name . ' age is ' . $age?></h2>
+        <ul>
+        <?php foreach ($lines as $line) : ?>
+
+            <li><?= $line; ?></li>
+
+        <?php endforeach; ?>
+        
+        </ul>
     </body>
 </html>

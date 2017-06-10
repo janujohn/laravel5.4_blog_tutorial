@@ -4,11 +4,11 @@
     </head>
     <body>
         <ul>
-        <?php foreach ($lines as $line) : ?>
+        @foreach ($lines as $line)
 
-            <li><?= $line; ?></li>
+            <li>{{ $line }}</li>
 
-        <?php endforeach; ?>
+        @endforeach
         
         </ul>
     </body>

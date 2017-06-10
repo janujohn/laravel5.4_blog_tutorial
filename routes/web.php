@@ -13,7 +13,8 @@
 
 Route::get('/', function () {
 
-   return view('welcome')->with('name', 'john');	
+   $name = 'janu';
+   return view('welcome', ['name' => $name]);	
 
 });
 

@@ -3,6 +3,6 @@
    
     </head>
     <body>
-        <h2> Hello <?= $name ?></h2>
+        <h2> <?= $name . ' age is ' . $age?></h2>
     </body>
 </html>

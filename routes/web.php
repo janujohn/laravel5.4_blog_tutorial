@@ -30,3 +30,13 @@ Route::get('about', function() {
 });
 
 
+Route::get('/home', 'PostsController@home');
+
+
+Route::get('/test', 'PostsController@test');
+
+Route::get('/create', 'PostsController@create');
+
+Route::post('/posts', 'PostsController@store');
+
+

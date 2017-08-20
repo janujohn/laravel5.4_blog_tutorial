@@ -13,7 +13,7 @@
   		<div class="form-group">
     
     		<label for="exampleInputEmail1">Title</label>
-    		<input type="text" class="form-control" id="title" name="title" >
+    		<input type="text" class="form-control" id="title" name="title">
   
   		</div>
   
@@ -23,9 +23,11 @@
 
   		</div>
   		
-  		
-  		<button type="submit" class="btn btn-primary">Publish</button>
-	
-	</form>
 
+  		<div class="form-group">
+  		<button type="submit" class="btn btn-primary">Publish</button>
+  		</div>
+			@include('layouts.errors')
+
+	</form>
 @endsection

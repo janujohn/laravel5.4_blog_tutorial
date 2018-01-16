@@ -13,7 +13,10 @@ class PostsController extends Controller
     public function home() 
     {
     
-    	return view('posts.index');
+    //posts = Posts::all();
+
+    	$posts = Posts::orderBy('created_at', 'desc')->get();
+    	return view('posts.index', compact('posts'));
   
     }
 
@@ -21,6 +24,21 @@ class PostsController extends Controller
     {
     	return view('posts.testex');
     }
+
+    /*public function show($id)
+    {
+    	$post = Posts::find($id);
+
+    	return view('posts.show',compact('post'));
+    }*/
+
+    public function show(Posts $post)
+    {
+    	//$post = Posts::find($id);
+
+    	return view('posts.show',compact('post'));
+    }
+
 
     public function create()
     {
@@ -41,7 +59,7 @@ class PostsController extends Controller
 
     		'title' => 'required',
     		'body' => 'required'
-    		]);
+    		]);  
 
     	posts::create([
     		'title' => request('title'),

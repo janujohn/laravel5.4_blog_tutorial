@@ -6,9 +6,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\posts;
+use App\User;
+
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['home', 'show']);
+    }
     
     public function home() 
     {
@@ -61,10 +67,14 @@ class PostsController extends Controller
     		'body' => 'required'
     		]);  
 
-    	posts::create([
+        auth()->user()->publish(
+            new posts(request(['title','body']))
+            );
+    	/*posts::create([
     		'title' => request('title'),
-    		'body'  => request('body')
-    		]);
+    		'body'  => request('body'),
+            'user_id' => auth()->id()
+    		]);*/
 			
 			return redirect('/home');
 

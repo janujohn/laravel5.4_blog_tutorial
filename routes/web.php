@@ -33,7 +33,7 @@ Route::get('about', function() {
 Route::get('/home', 'PostsController@home');
 
 
-Route::get('/test', 'PostsController@test');
+Route::get('/', 'PostsController@show')->name('home');
 
 Route::get('/create', 'PostsController@create');
 
@@ -46,4 +46,15 @@ Route::post('/posts/{post}/comments', 'CommentsController@store');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/homes', 'HomeController@index');
+
+Route::get('/register', 'RegistrationController@create');
+
+Route::post('/register', 'RegistrationController@store');
+
+Route::get('/login', 'SessionsController@create');
+
+Route::post('/login', 'SessionsController@store');
+
+
+Route::get('/logout', 'SessionsController@destroy');
